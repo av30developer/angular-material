@@ -1,0 +1,14 @@
+<app-header (toggleSidebarForMe)="toogleSidebar($event)" *ngIf="showMenu && showLogin">Header</app-header>
+<mat-drawer-container >
+    <mat-drawer mode="side" [opened]="sidebarOpened" *ngIf="showMenu && showLogin">
+        <app-sidebar  >Sidebar</app-sidebar>
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+
+        <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+</mat-drawer-container>
+<app-footer *ngIf="showMenu && showLogin">Footer</app-footer>
